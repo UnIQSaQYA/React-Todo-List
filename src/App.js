@@ -41,7 +41,11 @@ class App extends Component {
   };
 
   handleDelete = id => {
-    console.log(`handle Delete ${id}`);
+    const filterItems = this.state.items.filter(item => item.id !== id);
+
+    this.setState({
+      items: filterItems
+    });
   };
 
   handleEdit = id => {
